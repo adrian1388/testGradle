@@ -1,2 +1,2 @@
-# testGradle
-First commit testing a gradle project with apollo android.
+# TestGradle
+Testing a gradle project with Apollo Android.
