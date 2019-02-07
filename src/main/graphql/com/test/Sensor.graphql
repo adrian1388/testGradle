@@ -1,0 +1,35 @@
+query findSensorById($id: UUID!) {
+  findSensorById(id: $id) {
+    id
+    version
+    status
+    identifier
+    verifier {
+      id
+      version
+      status
+      name
+    }
+    attribute {
+      id
+      version
+      status
+      name
+    }
+    task {
+      id
+      version
+      status
+      taskTemplate {
+        id
+        version
+        name
+      }
+    }
+    controller {
+      id
+      version
+      alias
+    }
+  }
+}

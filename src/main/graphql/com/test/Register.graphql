@@ -1,0 +1,8 @@
+mutation register {
+  register(id: "5d67b091-2f70-4040-ad0f-55de59d7861d") {
+    id
+    version
+    status
+    alias
+  }
+}
