@@ -1,0 +1,32 @@
+query findOfficeById($id: UUID) {
+  findOfficeById(id: $id) {
+    id
+    version
+    status
+    updatedBy {
+      id
+    }
+    updatedOn
+    createdBy {
+      id
+    }
+    business {
+      id
+    }
+    createdOn
+    contact {
+      id
+      version
+      alias
+      firstName
+      lastName
+      photoId
+      type
+      emails {
+        id
+        version
+        address
+      }
+    }
+  }
+}

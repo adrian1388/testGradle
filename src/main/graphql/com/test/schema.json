@@ -231,6 +231,29 @@
               "deprecationReason": null
             },
             {
+              "name": "findVerifierByTagId",
+              "description": null,
+              "args": [
+                {
+                  "name": "tagId",
+                  "description": "",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Verifier",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "findLocationsByKeyword",
               "description": null,
               "args": [
@@ -268,29 +291,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Page_Location",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "findVerifierByTagId",
-              "description": null,
-              "args": [
-                {
-                  "name": "tagId",
-                  "description": "",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Verifier",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -614,29 +614,6 @@
               "deprecationReason": null
             },
             {
-              "name": "findLocationById",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "UUID",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Location",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "findAllBusinessDevices",
               "description": null,
               "args": [
@@ -654,6 +631,29 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Page_BusinessDevice",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "findLocationById",
+              "description": null,
+              "args": [
+                {
+                  "name": "id",
+                  "description": "",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "UUID",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Location",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -831,19 +831,9 @@
               "deprecationReason": null
             },
             {
-              "name": "findOfficesByName",
+              "name": "findActiveOfficesByContactAliasOrCompanyName",
               "description": null,
               "args": [
-                {
-                  "name": "business",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "BusinessInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
                 {
                   "name": "name",
                   "description": "",
@@ -874,9 +864,19 @@
               "deprecationReason": null
             },
             {
-              "name": "findActiveOfficesByContactAliasOrCompanyName",
+              "name": "findOfficesByName",
               "description": null,
               "args": [
+                {
+                  "name": "business",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "BusinessInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
                 {
                   "name": "name",
                   "description": "",
@@ -1178,18 +1178,6 @@
               "deprecationReason": null
             },
             {
-              "name": "sessionInformation",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "SessionInformation",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "findActiveOffices",
               "description": null,
               "args": [
@@ -1207,6 +1195,41 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Page_Office",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "sessionInformation",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "SessionInformation",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "findActiveUserGroups",
+              "description": null,
+              "args": [
+                {
+                  "name": "pageable",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PageableInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Page_UserGroup",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1250,29 +1273,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Page_Sensor",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "findActiveUserGroups",
-              "description": null,
-              "args": [
-                {
-                  "name": "pageable",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "PageableInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Page_UserGroup",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1476,16 +1476,6 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "startIndex",
-              "description": "Start index",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "stopIndex",
               "description": "Stop index",
               "type": {
@@ -1501,6 +1491,16 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "SortInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startIndex",
+              "description": "Start index",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -1562,8 +1562,8 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "property",
-              "description": "Sorting order property",
+              "name": "direction",
+              "description": "Sorting order direction",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -1572,8 +1572,8 @@
               "defaultValue": null
             },
             {
-              "name": "direction",
-              "description": "Sorting order direction",
+              "name": "property",
+              "description": "Sorting order property",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -4974,76 +4974,6 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "timeZone",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "contact",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "createdBy",
               "description": null,
               "type": {
@@ -5064,32 +4994,11 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "createdOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ApplicationUserInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -5105,59 +5014,31 @@
               "defaultValue": null
             },
             {
-              "name": "permissions",
+              "name": "version",
               "description": null,
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "PermissionInput",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "userGroups",
+              "name": "status",
               "description": null,
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserGroupInput",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "createdOn",
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "forcePasswordChange",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -5173,25 +5054,36 @@
               "defaultValue": null
             },
             {
-              "name": "version",
+              "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "UUID",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "timeZone",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
-            },
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ApplicationUserInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
             {
               "name": "passwordExpiration",
               "description": null,
@@ -5213,11 +5105,61 @@
               "defaultValue": null
             },
             {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "expiration",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "contact",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ContactInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5237,106 +5179,35 @@
               "defaultValue": null
             },
             {
-              "name": "expiration",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ContactInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "middleName",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "maritalStatus",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "phones",
+              "name": "userGroups",
               "description": null,
               "type": {
                 "kind": "LIST",
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "ContactPhoneInput",
+                  "name": "UserGroupInput",
                   "ofType": null
                 }
               },
               "defaultValue": null
             },
             {
-              "name": "internalNote",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "office",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "OfficeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "emails",
+              "name": "permissions",
               "description": null,
               "type": {
                 "kind": "LIST",
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "ContactEmailInput",
+                  "name": "PermissionInput",
                   "ofType": null
                 }
               },
               "defaultValue": null
             },
             {
-              "name": "type",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "firstName",
+              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -5356,12 +5227,185 @@
               "defaultValue": null
             },
             {
-              "name": "version",
+              "name": "createdOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "LocalDateTime",
                 "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "forcePasswordChange",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContactInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "namePrefix",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "nameSuffix",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "birthDate",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "phones",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ContactPhoneInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "middleName",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "employment",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "emails",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ContactEmailInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "identifiers",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ContactIdentifierInput",
+                  "ofType": null
+                }
               },
               "defaultValue": null
             },
@@ -5386,25 +5430,61 @@
               "defaultValue": null
             },
             {
-              "name": "identifiers",
+              "name": "version",
               "description": null,
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ContactIdentifierInput",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "employment",
+              "name": "firstName",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "externalNote",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "internalNote",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "maritalStatus",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "photoId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
                 "ofType": null
               },
               "defaultValue": null
@@ -5430,81 +5510,11 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "externalNote",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "birthDate",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "nameSuffix",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
+              "name": "office",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "namePrefix",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "OfficeInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5532,16 +5542,6 @@
                 }
               },
               "defaultValue": null
-            },
-            {
-              "name": "photoId",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -5555,37 +5555,7 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "phoneNumber",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tags",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
+              "name": "createdBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -5595,11 +5565,21 @@
               "defaultValue": null
             },
             {
-              "name": "contact",
+              "name": "createdOn",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -5615,17 +5595,7 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "internalNote",
+              "name": "extension",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -5645,17 +5615,17 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
+              "name": "updatedBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "extension",
+              "name": "tags",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -5665,11 +5635,41 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "phoneNumber",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "internalNote",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "contact",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ContactInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5686,21 +5686,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "confirmationToken",
+              "name": "createdBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "address",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5716,31 +5706,11 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -5756,21 +5726,21 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "internalNote",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "username",
+              "name": "updatedBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "UsernameInput",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5786,11 +5756,21 @@
               "defaultValue": null
             },
             {
-              "name": "tokenGeneratedOn",
+              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -5806,7 +5786,7 @@
               "defaultValue": null
             },
             {
-              "name": "status",
+              "name": "confirmationToken",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -5816,11 +5796,31 @@
               "defaultValue": null
             },
             {
-              "name": "internalNote",
+              "name": "username",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "UsernameInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "address",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tokenGeneratedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -5837,21 +5837,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
+              "name": "subject",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "kind": "INPUT_OBJECT",
+                "name": "SubjectInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5867,17 +5857,37 @@
               "defaultValue": null
             },
             {
-              "name": "subject",
+              "name": "createdOn",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SubjectInput",
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
               "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -5897,21 +5907,11 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
+              "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -5927,6 +5927,26 @@
           "description": "",
           "fields": null,
           "inputFields": [
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "id",
               "description": null,
@@ -5948,40 +5968,6 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "permissions",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "PermissionInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
               "name": "updatedOn",
               "description": null,
               "type": {
@@ -5992,21 +5978,21 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -6036,12 +6022,26 @@
               "defaultValue": null
             },
             {
-              "name": "version",
+              "name": "createdOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "LocalDateTime",
                 "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "permissions",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "PermissionInput",
+                  "ofType": null
+                }
               },
               "defaultValue": null
             }
@@ -6057,21 +6057,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "userGroup",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "UserGroupInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
+              "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -6087,31 +6077,21 @@
               "defaultValue": null
             },
             {
-              "name": "resourceName",
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
+              "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "UUID",
                 "ofType": null
               },
               "defaultValue": null
@@ -6127,6 +6107,36 @@
               "defaultValue": null
             },
             {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "userGroup",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "UserGroupInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "resourceName",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "action",
               "description": null,
               "type": {
@@ -6137,21 +6147,11 @@
               "defaultValue": null
             },
             {
-              "name": "id",
+              "name": "updatedBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -6167,56 +6167,6 @@
           "description": "",
           "fields": null,
           "inputFields": [
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "systemRecord",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
             {
               "name": "createdOn",
               "description": null,
@@ -6238,11 +6188,21 @@
               "defaultValue": null
             },
             {
-              "name": "description",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -6262,21 +6222,11 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "systemRecord",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "name",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -6294,20 +6244,39 @@
                 }
               },
               "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "ContactIdentifierInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
+            },
             {
-              "name": "createdOn",
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -6322,6 +6291,67 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContactIdentifierInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "contact",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ContactInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -6342,6 +6372,16 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -6365,46 +6405,6 @@
                 "ofType": null
               },
               "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "contact",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
-                "ofType": null
-              },
-              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -6418,21 +6418,21 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "id",
+              "name": "line2",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "UUID",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "state",
+              "name": "contact",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "INPUT_OBJECT",
+                "name": "ContactInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -6448,7 +6448,17 @@
               "defaultValue": null
             },
             {
-              "name": "country",
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "state",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -6468,37 +6478,7 @@
               "defaultValue": null
             },
             {
-              "name": "contact",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "city",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
+              "name": "updatedBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -6508,47 +6488,7 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "zipPlus4",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "zipCode",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "internalNote",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "line2",
+              "name": "city",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -6568,17 +6508,77 @@
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
+              "name": "version",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "zipPlus4",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "country",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "zipCode",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
               "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "internalNote",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -6599,11 +6599,31 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -6619,51 +6639,11 @@
               "defaultValue": null
             },
             {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "contact",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -6683,21 +6663,41 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
+              "name": "status",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
+              "name": "contact",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "name": "ContactInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -9077,31 +9077,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "office",
+              "name": "updatedBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "OfficeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "alias",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -9112,16 +9092,6 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -9141,17 +9111,27 @@
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
+              "name": "updatedOn",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "loginType",
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "alias",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -9171,21 +9151,31 @@
               "defaultValue": null
             },
             {
-              "name": "locked",
+              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Boolean",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "business",
+              "name": "lastReported",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
+                "kind": "SCALAR",
+                "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "locked",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -9201,21 +9191,31 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "loginType",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "lastReported",
+              "name": "office",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
+                "kind": "INPUT_OBJECT",
+                "name": "OfficeInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -13606,29 +13606,6 @@
               "deprecationReason": null
             },
             {
-              "name": "deleteBusiness",
-              "description": "Deletes the specified Business from the database.",
-              "args": [
-                {
-                  "name": "business",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "BusinessInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Business",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "saveController",
               "description": "Updates a Controller if the id was specified, if not a new record is created in the database.",
               "args": [
@@ -13646,6 +13623,29 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Controller",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "deleteBusiness",
+              "description": "Deletes the specified Business from the database.",
+              "args": [
+                {
+                  "name": "business",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "BusinessInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Business",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -13675,29 +13675,6 @@
               "deprecationReason": null
             },
             {
-              "name": "saveBusiness",
-              "description": "Updates a Business if the id was specified, if not a new record is created in the database.",
-              "args": [
-                {
-                  "name": "business",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "BusinessInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Business",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "deleteOffice",
               "description": "Deletes the specified Office from the database.",
               "args": [
@@ -13715,6 +13692,29 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Office",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "saveBusiness",
+              "description": "Updates a Business if the id was specified, if not a new record is created in the database.",
+              "args": [
+                {
+                  "name": "business",
+                  "description": "",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "BusinessInput",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Business",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -13997,15 +13997,15 @@
               "deprecationReason": null
             },
             {
-              "name": "switchOffice",
-              "description": null,
+              "name": "saveSensor",
+              "description": "Updates a Sensor if the id was specified, if not a new record is created in the database.",
               "args": [
                 {
-                  "name": "officeId",
+                  "name": "sensor",
                   "description": "",
                   "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
+                    "kind": "INPUT_OBJECT",
+                    "name": "SensorInput",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -14013,7 +14013,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "Office",
+                "name": "Sensor",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -14043,15 +14043,15 @@
               "deprecationReason": null
             },
             {
-              "name": "saveSensor",
-              "description": "Updates a Sensor if the id was specified, if not a new record is created in the database.",
+              "name": "switchOffice",
+              "description": null,
               "args": [
                 {
-                  "name": "sensor",
+                  "name": "officeId",
                   "description": "",
                   "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "SensorInput",
+                    "kind": "SCALAR",
+                    "name": "String",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -14059,7 +14059,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "Sensor",
+                "name": "Office",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -14361,11 +14361,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -14395,6 +14395,26 @@
               "defaultValue": null
             },
             {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "systemRecord",
               "description": null,
               "type": {
@@ -14405,11 +14425,11 @@
               "defaultValue": null
             },
             {
-              "name": "status",
+              "name": "createdBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14435,31 +14455,11 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -14475,6 +14475,76 @@
           "description": "",
           "fields": null,
           "inputFields": [
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "normalLow",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "BigDecimal",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "attribute",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "AttributeInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "status",
               "description": null,
@@ -14496,31 +14566,11 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
+              "name": "createdBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "normalLow",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "BigDecimal",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14536,61 +14586,11 @@
               "defaultValue": null
             },
             {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "attribute",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AttributeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "normalHigh",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "BigDecimal",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14607,7 +14607,7 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "imageId",
+              "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -14617,41 +14617,11 @@
               "defaultValue": null
             },
             {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
+              "name": "description",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -14677,11 +14647,31 @@
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
+              "name": "options",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -14697,21 +14687,21 @@
               "defaultValue": null
             },
             {
-              "name": "name",
+              "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "description",
+              "name": "createdOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -14727,6 +14717,36 @@
               "defaultValue": null
             },
             {
+              "name": "imageId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "suffix",
               "description": null,
               "type": {
@@ -14737,27 +14757,7 @@
               "defaultValue": null
             },
             {
-              "name": "options",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "type",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -14778,7 +14778,17 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "updatedBy",
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -14788,11 +14798,11 @@
               "defaultValue": null
             },
             {
-              "name": "createdOn",
+              "name": "updatedBy",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14808,21 +14818,21 @@
               "defaultValue": null
             },
             {
-              "name": "id",
+              "name": "task",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
+                "kind": "INPUT_OBJECT",
+                "name": "TaskInput",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "verifier",
+              "name": "sequence",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "VerifierInput",
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -14838,21 +14848,21 @@
               "defaultValue": null
             },
             {
-              "name": "task",
+              "name": "createdOn",
               "description": null,
               "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "TaskInput",
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "createdBy",
+              "name": "verifier",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "name": "VerifierInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -14876,13 +14886,463 @@
                 "ofType": null
               },
               "defaultValue": null
-            },
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "TaskInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
             {
-              "name": "sequence",
+              "name": "completionPermissibility",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "earlyStartPermissibilityUnit",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lateStartPermissibility",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "notificationGroup",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "UserGroupInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "timeZone",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "strictMode",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "completionPermissibilityUnit",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "taskTemplate",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "TaskTemplateInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "verifiers",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "TaskVerifierInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequencies",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "TaskFrequencyInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "earlyStartPermissibility",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "workGroup",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "UserGroupInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lateStartPermissibilityUnit",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "TaskFrequencyInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "doSunday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "interval",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doTuesday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endTime",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doMonday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doWednesday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startTime",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "intervalUnit",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doSaturday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doFriday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "task",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "TaskInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startDate",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "doThursday",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "finalEndStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
                 "ofType": null
               },
               "defaultValue": null
@@ -14899,22 +15359,26 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "name",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "snapshots",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "VerifierAttributeSnapshotInput",
+                  "ofType": null
+                }
               },
               "defaultValue": null
             },
@@ -14929,7 +15393,17 @@
               "defaultValue": null
             },
             {
-              "name": "status",
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tagId",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -14939,11 +15413,31 @@
               "defaultValue": null
             },
             {
-              "name": "id",
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "LocationInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "paired",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "UUID",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "locationInstructions",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -14959,11 +15453,11 @@
               "defaultValue": null
             },
             {
-              "name": "locationInstructions",
+              "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -14983,6 +15477,26 @@
               "defaultValue": null
             },
             {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "updatedBy",
               "description": null,
               "type": {
@@ -14993,11 +15507,72 @@
               "defaultValue": null
             },
             {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "VerifierAttributeSnapshotInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
               "name": "createdOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "attributeId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lastReading",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "BigDecimal",
                 "ofType": null
               },
               "defaultValue": null
@@ -15013,86 +15588,11 @@
               "defaultValue": null
             },
             {
-              "name": "paired",
+              "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "tagId",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "location",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "LocationInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "snapshots",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "VerifierAttributeSnapshotInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "LocationInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -15108,11 +15608,92 @@
               "defaultValue": null
             },
             {
-              "name": "path",
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lowestReading",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "BigDecimal",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "attribute",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "AttributeInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "highestReading",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "BigDecimal",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "verifier",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "VerifierInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lastReadingStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "LocationInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -15152,11 +15733,41 @@
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
+              "name": "createdBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -15172,16 +15783,6 @@
               "defaultValue": null
             },
             {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "sequence",
               "description": null,
               "type": {
@@ -15192,11 +15793,21 @@
               "defaultValue": null
             },
             {
-              "name": "updatedOn",
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "path",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "LocalDateTime",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -15237,11 +15848,115 @@
               "defaultValue": null
             },
             {
+              "name": "verifiers",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "VerifierInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "parentLocation",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "LocationInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "contact",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ContactInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "business",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sequence",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -15261,726 +15976,11 @@
               "defaultValue": null
             },
             {
-              "name": "parentLocation",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "LocationInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "sequence",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "contact",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ContactInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "verifiers",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "VerifierInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
               "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "path",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "VerifierAttributeSnapshotInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "attributeId",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "highestReading",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "BigDecimal",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "verifier",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "VerifierInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "lastReadingStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "lowestReading",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "BigDecimal",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "lastReading",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "BigDecimal",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "attribute",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AttributeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "TaskInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "frequencies",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "TaskFrequencyInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "notificationGroup",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "UserGroupInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "completionPermissibility",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "completionPermissibilityUnit",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "strictMode",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "lateStartPermissibility",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "taskTemplate",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "TaskTemplateInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "timeZone",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "earlyStartPermissibilityUnit",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "workGroup",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "UserGroupInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "earlyStartPermissibility",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "lateStartPermissibilityUnit",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "verifiers",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "TaskVerifierInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "TaskFrequencyInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "task",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "TaskInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "intervalUnit",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "interval",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doWednesday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "finalEndStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doFriday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doSaturday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doThursday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startTime",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doSunday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doMonday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "doTuesday",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startDate",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endTime",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -16007,21 +16007,25 @@
               "defaultValue": null
             },
             {
+              "name": "verifiers",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "VerifierInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
               "name": "attribute",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "AttributeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "to",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
                 "ofType": null
               },
               "defaultValue": null
@@ -16037,16 +16041,12 @@
               "defaultValue": null
             },
             {
-              "name": "verifiers",
+              "name": "to",
               "description": null,
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "VerifierInput",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
               },
               "defaultValue": null
             }
@@ -16062,21 +16062,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "coordinator",
+              "name": "business",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "CoordinatorInput",
+                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16092,11 +16082,51 @@
               "defaultValue": null
             },
             {
-              "name": "alias",
+              "name": "coordinator",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "CoordinatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "ipAddress",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -16107,6 +16137,36 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "alias",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -16124,66 +16184,6 @@
                 }
               },
               "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "ipAddress",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -16196,16 +16196,6 @@
           "description": "",
           "fields": null,
           "inputFields": [
-            {
-              "name": "passwordExpiration",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
             {
               "name": "controllers",
               "description": null,
@@ -16221,37 +16211,17 @@
               "defaultValue": null
             },
             {
-              "name": "version",
+              "name": "updatedOn",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "expiration",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
               "name": "alias",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -16271,6 +16241,26 @@
                   "name": "PermissionInput",
                   "ofType": null
                 }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               },
               "defaultValue": null
             },
@@ -16299,36 +16289,6 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "id",
               "description": null,
               "type": {
@@ -16339,11 +16299,51 @@
               "defaultValue": null
             },
             {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "passwordExpiration",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "updatedBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "expiration",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -16360,91 +16360,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "verifier",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "VerifierInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "attribute",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "AttributeInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16464,51 +16384,21 @@
               "defaultValue": null
             },
             {
-              "name": "lastReading",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "BigDecimal",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "task",
+              "name": "business",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "TaskInput",
+                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "lastReadingStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "controller",
+              "name": "createdBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "ControllerInput",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16522,79 +16412,14 @@
                 "ofType": null
               },
               "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "CompletedTaskAttributeValueInput",
-          "description": "",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
             },
             {
-              "name": "name",
+              "name": "lastReading",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "BigDecimal",
                 "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "note",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "value",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "createdOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "photos",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "CompletedTaskAttributePhotoInput",
-                  "ofType": null
-                }
               },
               "defaultValue": null
             },
@@ -16619,21 +16444,11 @@
               "defaultValue": null
             },
             {
-              "name": "endStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
+              "name": "task",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
+                "name": "TaskInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16649,36 +16464,6 @@
               "defaultValue": null
             },
             {
-              "name": "completedTask",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "CompletedTaskInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "sensor",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SensorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "sequence",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "updatedOn",
               "description": null,
               "type": {
@@ -16689,11 +16474,82 @@
               "defaultValue": null
             },
             {
-              "name": "id",
+              "name": "verifier",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "VerifierInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "UUID",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "controller",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ControllerInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "lastReadingStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "CompletedTaskAttributeValueInput",
+          "description": "",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "createdOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
                 "ofType": null
               },
               "defaultValue": null
@@ -16709,11 +16565,155 @@
               "defaultValue": null
             },
             {
+              "name": "note",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "photos",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "CompletedTaskAttributePhotoInput",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sensor",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "SensorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "attribute",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "AttributeInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sequence",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "completedTask",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "CompletedTaskInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "startStamp",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "value",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16730,21 +16730,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "photoBlob",
+              "name": "business",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "version",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Int",
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16755,26 +16745,6 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "CompletedTaskAttributeValueInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "updatedOn",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDateTime",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16795,6 +16765,46 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "version",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "createdBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "photoBlob",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedOn",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -16818,16 +16828,6 @@
                 "ofType": null
               },
               "defaultValue": null
-            },
-            {
-              "name": "createdBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -16841,31 +16841,21 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "UUID",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "business",
+              "name": "createdBy",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "BusinessInput",
+                "name": "ApplicationUserInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "task",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "TaskInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16885,51 +16875,31 @@
               "defaultValue": null
             },
             {
-              "name": "updatedBy",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "user",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "verifier",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "VerifierInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startStamp",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Instant",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "business",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BusinessInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "updatedBy",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16955,21 +16925,51 @@
               "defaultValue": null
             },
             {
-              "name": "createdBy",
+              "name": "verifier",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "ApplicationUserInput",
+                "name": "VerifierInput",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "task",
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startStamp",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Instant",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "user",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "TaskInput",
+                "name": "ApplicationUserInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -16996,31 +16996,21 @@
               "defaultValue": null
             },
             {
-              "name": "expiration",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "LocalDate",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "fastLogin",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "version",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -17036,6 +17026,16 @@
               "defaultValue": null
             },
             {
+              "name": "expiration",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "LocalDate",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "forcePasswordChange",
               "description": null,
               "type": {
@@ -17046,25 +17046,11 @@
               "defaultValue": null
             },
             {
-              "name": "groups",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "UserGroupInput",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
+              "name": "fastLogin",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -17086,6 +17072,20 @@
                 "kind": "SCALAR",
                 "name": "UUID",
                 "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "groups",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "UserGroupInput",
+                  "ofType": null
+                }
               },
               "defaultValue": null
             }
@@ -17111,7 +17111,17 @@
               "defaultValue": null
             },
             {
-              "name": "passwordExpiration",
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "UUID",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "expiration",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -17121,11 +17131,31 @@
               "defaultValue": null
             },
             {
-              "name": "id",
+              "name": "password",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "UUID",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "status",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "ipAddress",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -17155,37 +17185,7 @@
               "defaultValue": null
             },
             {
-              "name": "password",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "ipAddress",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "status",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "expiration",
+              "name": "passwordExpiration",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -17204,6 +17204,29 @@
           "name": "Subscription",
           "description": "Subscription root type",
           "fields": [
+            {
+              "name": "findSnapshotChanges2",
+              "description": null,
+              "args": [
+                {
+                  "name": "id",
+                  "description": "",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "UUID",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "VerifierAttributeSnapshot",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "findSnapshotChanges",
               "description": null,
