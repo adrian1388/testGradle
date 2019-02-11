@@ -1,9 +1,10 @@
-package com.test;
+package com.test.client;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -116,7 +117,11 @@ public class Client {
             .addCustomTypeAdapter(CustomType.INSTANT, instantCustomTypeAdapter)
             //TODO add cache
 //            .normalizedCache(normalizedCacheFactory, cacheKeyResolver)
-            .subscriptionTransportFactory(new WebSocketSubscriptionTransport.Factory(SUBSCRIPTION_BASE_URL, okHttpClient))
+            .subscriptionTransportFactory(new WebSocketSubscriptionTransport.Factory(
+        		SUBSCRIPTION_BASE_URL,
+        		okHttpClient
+        	))
+            .subscriptionHeartbeatTimeout(15, TimeUnit.SECONDS)
             .build();
     }
 }

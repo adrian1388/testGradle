@@ -1,10 +1,13 @@
-package com.test;
+package com.test.apolloAndroid;
 
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +16,13 @@ import com.apollographql.apollo.ApolloClient;
 import com.apollographql.apollo.ApolloSubscriptionCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
+import com.apollographql.apollo.internal.subscription.ApolloSubscriptionTerminatedException;
 import com.apollographql.apollo.rx2.Rx2Apollo;
+import com.test.client.Connection;
+import com.test.FindOfficeByIdQuery;
 import com.test.FindSensorByIdQuery;
+import com.test.FindSnapshotChanges2Subscription;
+import com.test.RegisterMutation;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -27,6 +35,7 @@ import io.reactivex.subscribers.DisposableSubscriber;
  */
 @RestController
 public class Library {
+    protected final Log logger = LogFactory.getLog(getClass());
 
     @Autowired
     private ApolloClient apolloClient;
@@ -110,13 +119,16 @@ public class Library {
         return true;
     }
 
+    String responseString = "";
+    Boolean connected = false;
+
     /**
-     * Mutation tester method
+     * Subscription tester method
      * 
      * @return Boolean
      */
     @GetMapping(value = "testSubscription")
-    public boolean testSubscription() {
+    public String testSubscription() {
 
         FindSnapshotChanges2Subscription subscription = FindSnapshotChanges2Subscription.builder()
             .id(UUID.fromString("855891ef-f2ff-47f6-adcc-64ba1917d585"))
@@ -124,13 +136,26 @@ public class Library {
         subscriptionCall = apolloClient
             .subscribe(subscription);
 
+        disposablesAdd(subscriptionCall);
+        
+        
+        return responseString;
+    }
+    
+    
+    
+    public void disposablesAdd(ApolloSubscriptionCall<FindSnapshotChanges2Subscription.Data> subscriptionCall) {
+
+    	connected = true;
+    	
         disposables.add(Rx2Apollo.from(subscriptionCall)
             .subscribeOn(Schedulers.io())
 //            .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(
                 new DisposableSubscriber<Response<FindSnapshotChanges2Subscription.Data>>() {
                   @Override public void onNext(Response<FindSnapshotChanges2Subscription.Data> response) {
-                	  System.out.println("RESPONSE SUBS: " + response.data());
+                	  logger.info("RESPONSE SUBS TIME: " + response.data());
+                	  responseString = response.data().toString();
 //                    commentsListViewAdapter.addItem(response.data().commentAdded().content());
 //                    Toast.makeText(GitHuntEntryDetailActivity.this, "Subscription response received", Toast.LENGTH_SHORT)
 //                        .show();
@@ -139,6 +164,13 @@ public class Library {
                   @Override public void onError(Throwable e) {
                 	  System.out.println("Subscription failure: " + e);
                 	  e.printStackTrace();
+                	  if (e instanceof ApolloSubscriptionTerminatedException) {
+                		  logger.info("**** Unsubsribing... ");
+//                		  disposablesAdd(subscriptionCall.clone());
+                		  
+                		  
+                	  }
+                	  connected = false;
                   }
 
                   @Override public void onComplete() {
@@ -147,6 +179,55 @@ public class Library {
                 }
             )
         );
+
+    }
+
+    @Scheduled(fixedDelay = 1000 * 30)
+    public void initConecction() {
+    	logger.info("**** initConnection");
+    	if (!connected && subscriptionCall != null) {
+        	logger.info("**** initConnection: NOT Connected. cloning!!");
+    	    disposablesAdd(subscriptionCall.clone());
+    	} else {
+    		logger.info("**** initConnection: Connected! --");
+    	}
+    }
+    
+
+    @Autowired
+    private Connection connection;
+
+
+    /**
+     * login
+     * 
+     * @return Boolean
+     */
+    @GetMapping(value = "login")
+    public boolean login() {
+
+        connection.login();
+
+        if (connection.getCookies() != null && connection.getToken() != null) {
+            // LOGGED IN
+
+            logger.info(" LOGGEDIN ");
+//            connection.logout();
+        }
+
+        return true;
+    }
+
+    /**
+     * logout
+     * 
+     * @return Boolean
+     */
+    @GetMapping(value = "logout")
+    public boolean logout() {
+    	connection.logout();
+        logger.info(" LOGGEDOUT");
+
 
         return true;
     }
