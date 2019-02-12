@@ -1,5 +1,7 @@
 package com.test.apolloAndroid;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
@@ -184,6 +186,15 @@ public class Library {
 
     @Scheduled(fixedDelay = 1000 * 30)
     public void initConecction() {
+    	
+
+    	try {
+    		System.out.println("Internet? " + !"127.0.0.1".equals(InetAddress.getLocalHost().getHostAddress().toString()));
+		} catch (UnknownHostException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	
     	logger.info("**** initConnection");
     	if (!connected && subscriptionCall != null) {
         	logger.info("**** initConnection: NOT Connected. cloning!!");
