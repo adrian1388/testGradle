@@ -172,7 +172,7 @@ public class Library {
                 		  
                 		  
                 	  }
-                	  connected = false;
+                	  cancelSubscription();
                   }
 
                   @Override public void onComplete() {
@@ -184,12 +184,20 @@ public class Library {
 
     }
 
-    @Scheduled(fixedDelay = 1000 * 30)
+	Boolean internet = true;
+    @Scheduled(fixedDelay = 1000 * 15)
     public void initConecction() {
-    	
 
     	try {
-    		System.out.println("Internet? " + !"127.0.0.1".equals(InetAddress.getLocalHost().getHostAddress().toString()));
+    		if (!internet && !"127.0.0.1".equals(InetAddress.getLocalHost().getHostAddress().toString())) {
+    			connected = false;
+    		}
+    		internet = !"127.0.0.1".equals(InetAddress.getLocalHost().getHostAddress().toString());
+    		System.out.println("Internet? " + internet + " ---> " + InetAddress.getLocalHost().getHostAddress());
+    		if (subscriptionCall != null) {
+    		System.out.println("Subscription canceled? " + subscriptionCall.isCanceled());
+    		}
+    		System.out.println("Discposables size : " + disposables.size());
 		} catch (UnknownHostException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -197,13 +205,21 @@ public class Library {
     	
     	logger.info("**** initConnection");
     	if (!connected && subscriptionCall != null) {
-        	logger.info("**** initConnection: NOT Connected. cloning!!");
-    	    disposablesAdd(subscriptionCall.clone());
+        	logger.info("**** initConnection: NOT Connected. cloning & subscribing!!");
+    		cancelSubscription();
+        	subscriptionCall = subscriptionCall.clone();
+    	    disposablesAdd(subscriptionCall);
     	} else {
     		logger.info("**** initConnection: Connected! --");
     	}
     }
     
+    private void cancelSubscription() {
+    	logger.info("**** cancelSubscription=======");
+        connected = false;
+    	subscriptionCall.cancel();
+        disposables.clear();
+    }
 
     @Autowired
     private Connection connection;

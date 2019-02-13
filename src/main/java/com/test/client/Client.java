@@ -121,7 +121,7 @@ public class Client {
         		SUBSCRIPTION_BASE_URL,
         		okHttpClient
         	))
-            .subscriptionHeartbeatTimeout(15, TimeUnit.SECONDS)
+            .subscriptionHeartbeatTimeout(15, TimeUnit.MINUTES)
             .build();
     }
 }
