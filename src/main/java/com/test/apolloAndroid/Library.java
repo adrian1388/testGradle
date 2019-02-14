@@ -149,7 +149,8 @@ public class Library {
     public void disposablesAdd(ApolloSubscriptionCall<FindSnapshotChanges2Subscription.Data> subscriptionCall) {
 
     	connected = true;
-    	
+
+		System.out.println("Disposables size BEFORE add: " + disposables.size());
         disposables.add(Rx2Apollo.from(subscriptionCall)
             .subscribeOn(Schedulers.io())
 //            .observeOn(AndroidSchedulers.mainThread())
@@ -181,6 +182,7 @@ public class Library {
                 }
             )
         );
+		System.out.println("Disposables size AFTER add: " + disposables.size());
 
     }
 
@@ -195,9 +197,8 @@ public class Library {
     		internet = !"127.0.0.1".equals(InetAddress.getLocalHost().getHostAddress().toString());
     		System.out.println("Internet? " + internet + " ---> " + InetAddress.getLocalHost().getHostAddress());
     		if (subscriptionCall != null) {
-    		System.out.println("Subscription canceled? " + subscriptionCall.isCanceled());
+    			System.out.println("Subscription canceled? " + subscriptionCall.isCanceled());
     		}
-    		System.out.println("Discposables size : " + disposables.size());
 		} catch (UnknownHostException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
