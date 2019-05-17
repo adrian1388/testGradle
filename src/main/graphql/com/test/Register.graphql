@@ -1,5 +1,5 @@
-mutation register {
-  register(id: "5d67b091-2f70-4040-ad0f-55de59d7861d") {
+mutation register($id: UUID!) {
+  register(id: $id) {
     id
     version
     status

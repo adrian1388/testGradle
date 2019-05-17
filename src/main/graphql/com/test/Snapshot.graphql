@@ -1,9 +1,6 @@
 subscription findSnapshotChanges2($id: UUID!) {
   findSnapshotChanges2(id: $id) {
-    id
-    lastReading
-    lastReadingStamp
-    lowestReading
-    highestReading
+    key
+    token
   }
 }

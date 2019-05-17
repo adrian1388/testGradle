@@ -1,5 +1,51 @@
+fragment SensorFields on Sensor {
+  id
+  version
+  status
+  identifier
+  verifier {
+    id
+    version
+    status
+    name
+  }
+  attribute {
+    id
+    version
+    status
+    name
+  }
+  task {
+    id
+    version
+    status
+    taskTemplate {
+      id
+      version
+      name
+    }
+  }
+  controller {
+    id
+    version
+    alias
+  }
+}
+
 query findSensorById($id: UUID!) {
   findSensorById(id: $id) {
+    ...SensorFields
+  }
+}
+
+mutation saveSensor($sensor: SensorInput) {
+  saveSensor(sensor: $sensor) {
+    ...SensorFields
+  }
+}
+
+mutation saveSensorAndSnapshotValueByIdentifier($lastReading: Float!, $lastReadingStamp: Instant!, $identifier: String!) {
+  saveSensorAndSnapshotValueByIdentifier(lastReading: $lastReading, lastReadingStamp: $lastReadingStamp, identifier: $identifier) {
     id
     version
     status

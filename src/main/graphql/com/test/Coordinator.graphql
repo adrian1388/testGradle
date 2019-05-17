@@ -1,0 +1,9 @@
+query findRelatedToController {
+  findRelatedToController {
+    id
+    version
+    status
+    alias
+    ipAddress
+  }
+}

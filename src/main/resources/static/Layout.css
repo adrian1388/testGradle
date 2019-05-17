@@ -1,0 +1,19 @@
+body {
+	background-color: #141e30;
+	color: white;
+	margin: 20px;
+	font-family: Arial;
+}
+
+img {
+	width: 150px;
+}
+
+table {
+	margin: 30px;
+}
+
+div.table {
+	display: flex;
+	
+}

@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +31,8 @@ import lombok.Data;
 @Data
 @Component
 public class Connection {
+
+    protected final Log logger = LogFactory.getLog(getClass());
 
     @Value("${httpUrl:null}")
     private String stringUrl;
@@ -48,7 +52,7 @@ public class Connection {
      * 
      * This sets {@link Connection#getCookies()} and {@link Connection#getToken()}.
      */
-    public void login() {
+    public void login(String username, String password) {
         String charset = "UTF-8";
         HttpURLConnection con = setUrlConnection("login");
 
@@ -57,8 +61,8 @@ public class Connection {
 
         // TODO User hard coded
         Map<String, String> parameters = new HashMap<>();
-        parameters.put("userId", "...");
-        parameters.put("password", "...");
+        parameters.put("userId", username);
+        parameters.put("password", password);
         parameters.put("remember-me", "false");
 
         con.setDoOutput(true);
@@ -119,12 +123,34 @@ public class Connection {
             if (200 <= status && status <= 210) {
                 this.setToken(null);
                 this.setCookies(null);
+                logger.info(" ****** LOGGEDOUT ****** ");
+            } else {
+            	logger.error(" Error logging out. Status of request: " + status);
             }
 
         } catch (IOException e1) {
+        	logger.error(" Error logging out. Status of request: " + status);
             e1.printStackTrace();
         }
         
+    }
+
+    /**
+     * @return True if Cookies and CSRF Token are not null. False otherwise. 
+     */
+    public Boolean loggedIn() {
+
+        if (this.getCookies() != null && this.getToken() != null) {
+
+            logger.debug("COOKIES   : " + this.getCookies());
+            logger.debug("CSRF TOKEN: " + this.getToken());
+            logger.debug(" ****** LOGGEDIN ****** ");
+            return true;
+        } else {
+            logger.debug(" ****** NOT LOGGEDIN ****** ");
+            return false;
+        }
+
     }
 
     /**

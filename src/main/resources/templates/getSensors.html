@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <link href="../static/Layout.css" th:href="@{/Layout.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="refresh" content="60">
+</head>
+<body>
+	<img th:src="@{/logo.png}"/>
+	
+	<div class="table">
+	    <th:block th:each="verifier: ${verifiers}">
+		    
+		    
+		    <table>
+			    <thead>
+			        <tr>
+			            <th th:text="${verifier}"> </th>
+			        </tr>
+			    </thead>
+			    <tbody>
+					<tr th:each="snap : ${snaps}">
+						<th:block th:if="${snap.attribute != null && snap.attribute.name != null && snap.verifier.name == verifier}">
+							<td><span th:text=${snap.attribute.name}> Attribute </span></td>
+							<td><span th:text=${snap.lastReading}> Value </span></td>
+						</th:block>
+					
+					</tr>
+		    	</tbody>
+			</table>
+		    
+		</th:block>
+	</div>
+</body>
+</html>
